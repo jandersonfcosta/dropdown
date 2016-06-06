@@ -1,0 +1,67 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<h1>Dropdown 1.0.0</h1>
+	<div>
+		<textarea onfocus="dropdown1.show(this)" style="display:inline-block" rows="10"></textarea>
+	</div>
+	<br>
+	<div>
+		<input type="text" onfocus="dropdown2.show(this)" style="display:inline-block">
+	</div>
+</body>
+
+<script src="dropdown.min.js" type="text/javascript"></script>
+<script>
+var dropdown1 = dropdown({
+	type: "checkbox", // padrão "select"
+	separator: ";", // padrão ","
+	breakline: true,// padrão false
+	readonly: true,// padrão true
+	height: 200,// opcional
+	options: [ // options também aceita um array simples como ["option 0", "option 1", ...] onde value e text serão iguais
+		{ value: "0", text: "Option 0 Option 0 Option 0" },
+		{ value: "1", text: "Option 1" },
+		{ value: "2", text: "Option 2" },
+		{ value: "3", text: "Option 3" },
+		{ value: "4", text: "Option 4" },
+		{ value: "5", text: "Option 5" },
+		{ value: "6", text: "Option 6" },
+		{ value: "7", text: "Option 7" },
+		{ value: "8", text: "Option 8" },
+		{ value: "9", text: "Option 9" },
+		{ value: "10", text: "Option 10" }
+	],
+	onshow: function() {
+		console.log("Aberto");
+	},
+	onclose: function(value) {
+		console.log(value);
+		console.log("Fechado");
+	}
+});
+
+var dropdown2 = dropdown({
+	//type: "checkbox",// padrão "select"
+	options: [// options também aceita um array simples como ["option 0", "option 1", ...] onde value e text serão iguais
+		"Option 0",
+		"Option 1",
+		"Option 2"
+	],
+	onshow: function() {
+		console.log("Aberto");
+	},
+	onclose: function(value) {
+		console.log(value);
+		console.log("Fechado");
+	}
+});
+
+</script>
+
+</html>
